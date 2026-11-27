@@ -16,12 +16,9 @@ import config
 def 읽기(경로):
     """CSV 파일을 읽어 사전 목록으로 돌려준다."""
     행들 = []
-    try:
-        with open(경로, encoding="utf-8") as f:
-            for 행 in csv.DictReader(f):
-                행들.append(행)
-    except:
-        return []
+    with open(경로, encoding="utf-8") as f:
+        for 행 in csv.DictReader(f):
+            행들.append(행)
     return 행들
 
 
